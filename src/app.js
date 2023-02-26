@@ -1,7 +1,13 @@
 import React from 'react';
+import Layout from './components/layout';
+import HomePage from './views/home';
 
 const App = () => {
-  return <h1>Brain Zone</h1>;
+  return (
+    <Layout>
+      <HomePage />
+    </Layout>
+  );
 };
 
 export default App;
