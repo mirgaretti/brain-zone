@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HeaderContainer, Logo, NavBar, NavIcon, SearchButton, SearchInputContainer, Stage, StagesContainer, TopContainer, UserIcon } from './styled';
+import LoginForm from './login';
 
-const Header = () => {
+const Header = () => { 
+  const [isLoginOpened, setIsLoginOpened] = useState(false);
   return (
     <HeaderContainer>
       <Logo src="/media/logo.svg" /> 
@@ -28,7 +30,8 @@ const Header = () => {
           <Stage background="/media/stage_inactive.svg" /> 
         </StagesContainer>  
       </NavBar> 
-      <UserIcon src="/media/user.svg" />         
+      <UserIcon src="/media/user.svg" onClick={() => setIsLoginOpened(!isLoginOpened)}/>  
+      {isLoginOpened && <LoginForm />}       
     </HeaderContainer>
   );
 };
